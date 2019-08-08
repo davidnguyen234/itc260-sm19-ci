@@ -6,8 +6,9 @@ original from: http://lifesforlearning.com/connecting-to-the-flickr-api-with-php
 
 */
 
-$api_key = 'YOUR API KEY';
-$tags = 'bears,polar';
+$api_key = '27b6c44b78bc1a9259f8feb33a517cba';
+$tags = 'dogs';
+
 
 $perPage = 25;
 $url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search';

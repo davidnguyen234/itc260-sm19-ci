@@ -14,12 +14,23 @@ class Pics extends CI_Controller {
                 */
         }
 
-        public function index()
-{
+        public function index($tags)
+        {
+            //$tags = 'sounders';
+            $pics = $this->pics_model->get_pics($tags);
+            $data['title'] = 'Pics';
+            $data['pics'] = $pics;
+            $this->load->view('news/pics', $data);
+        }
+       
+    }
 
-        $tags = 'mariners';
+/*
+        public function index($tags)
+{
         $pics = $this->pics_model->get_pics($tags);
- 
+        
+
         foreach($pics as $pic){
 
         $size = 'm';
@@ -27,29 +38,20 @@ class Pics extends CI_Controller {
         http://farm'. $pic->farm . '.staticflickr.com/' . $pic->server . '/' . $pic->id . '_' . $pic->secret . '_' . $size . '.jpg';
 
         echo "<img title='" . $pic->title . "' src='" . $photo_url . "' />";
+
+
  
 }
 
 
-        /*
-        $this->config->set_item('title','Seattle Sports News');
-
-        $nav1 = $this->config->item('nav1');
-
-        $data['news'] = $this->news_model->get_news();
-        $data['title'] = 'News archive';
-
-        //$this->load->view('templates/header', $data);
-        $this->load->view('news/index', $data);
-        //$this->load->view('templates/footer', $data);
-        */
+   
 }
 
     public function view($slug = NULL)
     {
 
             
-            /*
+   
             //slug without dashes
             $dashless_slug = str_replace("-", " ", $slug);
 
@@ -71,10 +73,11 @@ class Pics extends CI_Controller {
             //$this->load->view('templates/header', $data);
             $this->load->view('news/view', $data);
             //$this->load->view('templates/footer', $data);
-            */
+            
     }
 
 
 
 
 }
+*/

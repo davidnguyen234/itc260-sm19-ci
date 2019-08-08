@@ -8,12 +8,14 @@ class Pics_model extends CI_Model {
         }
 
 
-        public function get_news($tags = FALSE)
+        public function get_pics($tags = FALSE)
         {
             $api_key = $this->config->item('flickrKey');
 
             //SHOULD BE PASSED IN VIA QUERYSTRING/CONTROLLER
             //$tags = 'mariners';
+
+            //$tags = 'dogs';
             
             $perPage = 25;
             $url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search';
